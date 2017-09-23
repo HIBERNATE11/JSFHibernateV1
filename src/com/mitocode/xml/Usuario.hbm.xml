@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/01/2014 12:29:30 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mitocode.model.Usuario" table="usuario">
+        <id name="codUsuario" type="java.lang.Integer">
+            <column name="codUsuario" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="50" not-null="true" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" length="16" not-null="true" />
+        </property>        
+    </class>
+</hibernate-mapping>

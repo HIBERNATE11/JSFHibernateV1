@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<system-libraries>
+    <library path="C:/glassfish-4.1.2/glassfish4/glassfish/modules/javax.el.jar" source="C:/Users/gbrin/.m2/repository/org/glassfish/javax.el/3.0.1-b03/javax.el-3.0.1-b03-sources.jar"/>
+    <library path="C:/glassfish-4.1.2/glassfish4/glassfish/modules/weld-osgi-bundle.jar" source="C:/Users/gbrin/.m2/repository/org/jboss/weld/weld-osgi-bundle/2.2.13.Final/weld-osgi-bundle-2.2.13.Final-sources.jar"/>
+</system-libraries>
