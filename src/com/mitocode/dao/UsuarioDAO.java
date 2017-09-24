@@ -18,19 +18,14 @@ public class UsuarioDAO {
 
 		try {
 			session = HibernateUtil.getSessionFactory().openSession();
-			System.out.println("Antes de la query");
 			String hql = "FROM Usuario WHERE nombre = '" + usuario.getNombre() + "' and clave = '" + usuario.getClave() + "'";
 			//String hql = "FROM Usuario WHERE nombre = '" + usuario.getNombre() + "'";
-			System.out.println("hql: "+ hql);
 			Query query = session.createQuery(hql);
-			System.out.println("query: "+ query);
 
 			if (!query.list().isEmpty()) {
-				System.out.println("Lista no vacia");
 				us = (Usuario) query.list().get(0);
-				System.out.println("us.getNombre(): "+ us.getNombre());
 			}
-			//us = new Usuario(1,"Pepe","Perez");
+			//us = new Usuario(1,"Pepe","perez");
 
 		} catch (Exception e) {
 			System.out.println("EXCEPCIONNNN: "+ e);

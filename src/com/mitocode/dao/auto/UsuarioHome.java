@@ -27,8 +27,8 @@ public class UsuarioHome {
 
 	protected SessionFactory getSessionFactory() {
 		try {
-			return (SessionFactory) new InitialContext().lookup("MiSesionFactory");
-//			return (SessionFactory) new InitialContext().lookup("jndi_web2017");
+//			return (SessionFactory) new InitialContext().lookup("MiSesionFactory");
+			return (SessionFactory) new InitialContext().lookup("jndi_hiber2017");
 		} catch (Exception e) {
 			log.error("Could not locate SessionFactory in JNDI", e);
 			throw new IllegalStateException("Could not locate SessionFactory in JNDI");
@@ -106,7 +106,29 @@ public class UsuarioHome {
 			throw re;
 		}
 	}
+	
+	public Usuario verificarDatos(Usuario usuario) throws Exception {
+		Usuario us = null;
 
+		try {
+			
+			String hql = "FROM Usuario WHERE nombre = '" + usuario.getNombre() + "' and clave = '" + usuario.getClave() + "'";
+			//String hql = "FROM Usuario WHERE nombre = '" + usuario.getNombre() + "'";
+			Query query = sessionFactory.getCurrentSession().createQuery(hql);
+
+			if (!query.list().isEmpty()) {
+				us = (Usuario) query.list().get(0);
+			}
+			//us = new Usuario(1,"Pepe","perez");
+
+		} catch (Exception e) {
+			System.out.println("EXCEPCIONNNN: "+ e);
+			throw e;
+		}
+
+		return us;
+	}
+	
 	public List findByExample(Usuario instance) {
 		log.debug("finding Usuario instance by example");
 		try {

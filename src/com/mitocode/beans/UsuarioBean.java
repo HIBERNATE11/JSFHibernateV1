@@ -40,9 +40,8 @@ public class UsuarioBean {
 			if (us != null) {
 
 				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", us);
-				resultado = "exito"; // recalcar que el faces-redirect=true,
-										// olvida la peticion anterior y se
-										// dirige a la vista
+				resultado = "exito"; 
+//				resultado = "exito?faces-redirect=true";
 			} else {
 				resultado = "error";
 			}
